@@ -4,21 +4,19 @@
 <dict>
     <key>NSAppTransportSecurity</key>
         <dict>
+            <key>NSAllowsArbitraryLoads</key>
+            <true/>
             <key>NSExceptionDomains</key>
             <dict>
-                <key>localhost</key>
+                <key>http://10.144.110.119</key>
                 <dict>
                     <key>NSIncludesSubdomains</key>
                     <true/>
-                    <key>NSExceptionAllowsInsecureHTTPLoads</key>
-                    <true/>
+                    <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                    <false/>
                 </dict>
-            </dict>
-            <key>NSAllowsArbitraryLoadsInWebContent</key>
-            <true/>
-            <key>NSAllowsArbitraryLoads</key>
-            <true/>
-        </dict>
+           </dict>
+      </dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
