@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		35689D9F265C10BD00FB725F /* Registro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35689D9E265C10BD00FB725F /* Registro.swift */; };
+		35766CB8266A987100E2B923 /* InfoComercio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35766CB7266A987100E2B923 /* InfoComercio.swift */; };
+		35766CBE266AA27F00E2B923 /* VistaMapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35766CBD266AA27F00E2B923 /* VistaMapa.swift */; };
+		35766CC1266AA6A800E2B923 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35766CC0266AA6A800E2B923 /* File.swift */; };
+		357DFA5E26669DEF00B8C615 /* Biblioteca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357DFA5D26669DEF00B8C615 /* Biblioteca.swift */; };
+		357DFA6226669F7600B8C615 /* CeldaBiblioteca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357DFA6126669F7600B8C615 /* CeldaBiblioteca.swift */; };
+		359C4958266FE0710071312F /* InfoCola.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359C4957266FE0710071312F /* InfoCola.swift */; };
+		35AA4A99266E9D03004B4194 /* Colas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AA4A98266E9D03004B4194 /* Colas.swift */; };
+		35AA4A9C266EA611004B4194 /* ColasCelda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AA4A9B266EA611004B4194 /* ColasCelda.swift */; };
 		35E94436262899AB00B7B2E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E94435262899AB00B7B2E8 /* AppDelegate.swift */; };
 		35E94438262899AB00B7B2E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E94437262899AB00B7B2E8 /* SceneDelegate.swift */; };
 		35E9443A262899AB00B7B2E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E94439262899AB00B7B2E8 /* ViewController.swift */; };
@@ -18,6 +26,14 @@
 
 /* Begin PBXFileReference section */
 		35689D9E265C10BD00FB725F /* Registro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registro.swift; sourceTree = "<group>"; };
+		35766CB7266A987100E2B923 /* InfoComercio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoComercio.swift; sourceTree = "<group>"; };
+		35766CBD266AA27F00E2B923 /* VistaMapa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaMapa.swift; sourceTree = "<group>"; };
+		35766CC0266AA6A800E2B923 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		357DFA5D26669DEF00B8C615 /* Biblioteca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Biblioteca.swift; sourceTree = "<group>"; };
+		357DFA6126669F7600B8C615 /* CeldaBiblioteca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaBiblioteca.swift; sourceTree = "<group>"; };
+		359C4957266FE0710071312F /* InfoCola.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCola.swift; sourceTree = "<group>"; };
+		35AA4A98266E9D03004B4194 /* Colas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colas.swift; sourceTree = "<group>"; };
+		35AA4A9B266EA611004B4194 /* ColasCelda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColasCelda.swift; sourceTree = "<group>"; };
 		35E94432262899AB00B7B2E8 /* i-Queue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "i-Queue.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35E94435262899AB00B7B2E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35E94437262899AB00B7B2E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,10 +78,18 @@
 				35E94437262899AB00B7B2E8 /* SceneDelegate.swift */,
 				35E94439262899AB00B7B2E8 /* ViewController.swift */,
 				35E9443B262899AB00B7B2E8 /* Main.storyboard */,
+				359C4957266FE0710071312F /* InfoCola.swift */,
 				35689D9E265C10BD00FB725F /* Registro.swift */,
 				35E9443E262899AC00B7B2E8 /* Assets.xcassets */,
 				35E94440262899AC00B7B2E8 /* LaunchScreen.storyboard */,
 				35E94443262899AC00B7B2E8 /* Info.plist */,
+				357DFA5D26669DEF00B8C615 /* Biblioteca.swift */,
+				357DFA6126669F7600B8C615 /* CeldaBiblioteca.swift */,
+				35766CB7266A987100E2B923 /* InfoComercio.swift */,
+				35766CBD266AA27F00E2B923 /* VistaMapa.swift */,
+				35766CC0266AA6A800E2B923 /* File.swift */,
+				35AA4A98266E9D03004B4194 /* Colas.swift */,
+				35AA4A9B266EA611004B4194 /* ColasCelda.swift */,
 			);
 			path = "i-Queue";
 			sourceTree = "<group>";
@@ -140,9 +164,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35AA4A9C266EA611004B4194 /* ColasCelda.swift in Sources */,
+				35766CBE266AA27F00E2B923 /* VistaMapa.swift in Sources */,
 				35689D9F265C10BD00FB725F /* Registro.swift in Sources */,
+				35766CB8266A987100E2B923 /* InfoComercio.swift in Sources */,
+				357DFA6226669F7600B8C615 /* CeldaBiblioteca.swift in Sources */,
 				35E9443A262899AB00B7B2E8 /* ViewController.swift in Sources */,
 				35E94436262899AB00B7B2E8 /* AppDelegate.swift in Sources */,
+				35AA4A99266E9D03004B4194 /* Colas.swift in Sources */,
+				359C4958266FE0710071312F /* InfoCola.swift in Sources */,
+				357DFA5E26669DEF00B8C615 /* Biblioteca.swift in Sources */,
+				35766CC1266AA6A800E2B923 /* File.swift in Sources */,
 				35E94438262899AB00B7B2E8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
