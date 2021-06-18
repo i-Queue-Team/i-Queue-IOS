@@ -46,7 +46,6 @@ class Biblioteca: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationItem.setHidesBackButton(true, animated: true)
         let prefences = UserDefaults.standard
         if let token = prefences.string(forKey: "token"){
             obtenerComercios(token: token)
@@ -58,7 +57,7 @@ class Biblioteca: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let tokenBearer = "Bearer " + token
         
-        let Url = String(format: "http://10.144.110.119/i-Queue-BackEnd/public/api/commerces")
+        let Url = String(format: "http://35.181.160.138/proyectos/queue/public/api/commerces")
         guard let serviceUrl = URL(string: Url) else { return }
         var request = URLRequest(url: serviceUrl)
         request.setValue(tokenBearer, forHTTPHeaderField: "Authorization")
@@ -93,7 +92,15 @@ class Biblioteca: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let shared = UserDefaults.standard
         shared.setValue(comercios[indexPath!.row]["image"] as! String, forKey: "image")
         shared.setValue(comercios[indexPath!.row]["name"] as! String, forKey: "name")
-        shared.setValue(comercios[indexPath!.row]["info"] as! String, forKey: "info")
+        if comercios[indexPath!.row]["info"] as? String == nil {
+            shared.setValue("", forKey: "info")
+        }else {
+            shared.setValue(comercios[indexPath!.row]["info"] as! String, forKey: "info")
+        }
+    }
+    
+    func ajustes() {
+        
     }
     
 

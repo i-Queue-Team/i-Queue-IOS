@@ -11,7 +11,7 @@ import MapKit
 class VistaMapa: UIViewController {
     
     let initialLocation = CLLocation(latitude: 38.09417763632999, longitude: -3.6311753498756056)
-    let regionRadius: CLLocationDistance = 1000 //1000 metros
+    let regionRadius: CLLocationDistance = 1500 //1500 metros
     
     var diccionario: [String: Any] = [:]
     var comercios: [[String: Any]] = []
@@ -80,7 +80,7 @@ extension VistaMapa: MKMapViewDelegate {
         
         let tokenBearer = "Bearer " + token
         
-        let Url = String(format: "http://10.144.110.119/i-Queue-BackEnd/public/api/commerces")
+        let Url = String(format: "http://35.181.160.138/proyectos/queue/public/api/commerces")
         guard let serviceUrl = URL(string: Url) else { return }
         var request = URLRequest(url: serviceUrl)
         request.setValue(tokenBearer, forHTTPHeaderField: "Authorization")

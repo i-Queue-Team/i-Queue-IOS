@@ -21,11 +21,14 @@ class Registro: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
         
     }
     @IBAction func registrarse(_ sender: Any) {
         if nombre.text != "" && correo.text != "" && contrasenia.text == confContrasenia.text {
-            let Url = String(format: "http://10.144.110.119/i-Queue-BackEnd/public/api/register")
+            let Url = String(format: "https://tinyurl.com/iqueues/api/register")
             guard let serviceUrl = URL(string: Url) else { return }
             var request = URLRequest(url: serviceUrl)
             request.httpMethod = "POST"

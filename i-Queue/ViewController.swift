@@ -16,9 +16,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         var preferences = UserDefaults.standard
+        
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        
         if let usuario = preferences.string(forKey: "usuario") {
             if let pass = preferences.string(forKey: "contra") {
-                login(usuario: usuario, password: pass)
+                if usuario != "" {
+                    login(usuario: usuario, password: pass)
+                }
             }
         }
         
@@ -38,7 +45,7 @@ class ViewController: UIViewController {
     }
     
     func login(usuario: String, password: String) {
-        let Url = String(format: "http://10.144.110.119/i-Queue-BackEnd/public/api/login")
+        let Url = String(format: "https://tinyurl.com/iqueues/api/login")
         guard let serviceUrl = URL(string: Url) else { return }
         var request = URLRequest(url: serviceUrl)
         request.httpMethod = "POST"
@@ -94,6 +101,7 @@ class ViewController: UIViewController {
                             shared.setValue(password, forKey: "contra")
                             let datos: [String: Any] = respuesta["data"] as! [String: Any]
                             shared.setValue(datos["token"] as! String, forKey: "token")
+                            shared.setValue(datos["id"] as! Int, forKey: "id")
                         }
                     }
                 } catch {
@@ -104,5 +112,54 @@ class ViewController: UIViewController {
 
     }
     
+    @IBAction func recuperarCont(_ sender: Any) {
+        
+        var correo: String = ""
+        
+        let alert = UIAlertController(title: "Recuperar Contraseña!", message: "introduce tu correo", preferredStyle: .alert)
+        alert.addTextField { (email) in
+            correo = email.text!
+        }
+        alert.addAction(UIAlertAction(title: "Enviar", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0]
+            self.recuperaCon(email: textField!.text!)
+        }))
+        self.present(alert, animated: true)
+    }
+    
+    func recuperaCon(email: String) {
+        let Url = String(format: "https://tinyurl.com/iqueues/api/forgot-password")
+        guard let serviceUrl = URL(string: Url) else { return }
+        var request = URLRequest(url: serviceUrl)
+        request.httpMethod = "POST"
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+
+        let bodyData = "email=\(email)"
+        request.httpBody = bodyData.data(using: String.Encoding.utf8);
+
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, response, error) in
+            if let response = response {
+                print(response)
+            }
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    DispatchQueue.main.async { [self] in
+                        print(json)
+                        let respuesta = json as! [String: Any]
+                        if respuesta["code"] as! Int == 200 {
+                            let alert = UIAlertController(title: "Atencion!!", message: "Recibiras un correo con las instrucciones para cambiar la contraseña", preferredStyle: .alert)
+                            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                            alert.addAction(okAction)
+                            present(alert, animated: true)
+                        }
+                    }
+                } catch {
+                    print(error)
+                }
+            }
+        }.resume()
+    }
 }
 

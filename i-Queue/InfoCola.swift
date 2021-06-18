@@ -54,7 +54,7 @@ class InfoCola: UIViewController {
     func post(token: String) {
         let tokenBearer = "Bearer " + token
         
-        let Url = String(format: "http://10.144.110.119/i-Queue-BackEnd/public/api/queue-verified-users/\(id)")
+        let Url = String(format: "http://35.181.160.138/proyectos/queue/public/api/queue-verified-users/\(id)")
         guard let serviceUrl = URL(string: Url) else { return }
         var request = URLRequest(url: serviceUrl)
         request.httpMethod = "DELETE"
@@ -72,7 +72,8 @@ class InfoCola: UIViewController {
                     self.respuesta = json as! [String: Any]
                     DispatchQueue.main.async {
                         if self.respuesta["code"] as! Int == 200 {
-                            self.navigationController?.dismiss(animated: true)
+                            self.navigationController?.popViewController(animated: true)
+                            self.dismiss(animated: true)
                         }
                     }
                     
